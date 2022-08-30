@@ -14,6 +14,7 @@ class Connection:
         self.conn, self.addr = conn, addr
         self.ip, self.port = addr
         self.message, self.json = message, _isit_json(message)
+        self.filter_result = filter_result
 
     def send(self, message: str) -> None:
         type_of_message = type(message)
