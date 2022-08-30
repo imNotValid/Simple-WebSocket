@@ -15,10 +15,10 @@ class Connection:
         Objects:
             conn (socket): socket connection object
             addr (str): (ip, port)
-            ip (str): :)
-            port (int): :)
-            message (Any, optional): _description_. Defaults to None.
-            filter_result (Any, optional): _description_. Defaults to None.
+            ip (str): ip
+            port (int): port
+            message (Any, optional): message. Defaults to None.
+            filter_result (Any, optional): result from your filters. Defaults to None.
         """ 
         self.conn, self.addr = conn, addr
         self.ip, self.port = addr
