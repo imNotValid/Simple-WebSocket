@@ -11,6 +11,15 @@ def _decode_message(data: bytes):
 
 class Connection:
     def __init__(self, conn: socket, addr: str, message: Any = None, filter_result: Any = None) -> None:
+        """
+        Objects:
+            conn (socket): socket connection object
+            addr (str): (ip, port)
+            ip (str): :)
+            port (int): :)
+            message (Any, optional): _description_. Defaults to None.
+            filter_result (Any, optional): _description_. Defaults to None.
+        """ 
         self.conn, self.addr = conn, addr
         self.ip, self.port = addr
         self.message, self.json = message, _isit_json(message)
