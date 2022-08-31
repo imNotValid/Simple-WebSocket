@@ -25,8 +25,8 @@ class WebSocket:
                 try:
                     funct, filterss = event
                     if filterss:
-                        fr = data.filter_result = filterss(data)
-                        if fr:
+                        data.filter_result = filterss(data)
+                        if data.filter_result:
                             funct(data)
                             break
                     else:
