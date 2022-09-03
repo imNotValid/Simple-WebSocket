@@ -30,7 +30,7 @@ class WebSocket:
             for event in list_of_listeners:
                 try:
                     func, filters = event
-                    if filterss:
+                    if filters:
                         fr = data.filter_result = filters(data)
                         if fr:
                             func(data)
