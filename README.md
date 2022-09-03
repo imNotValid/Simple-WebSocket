@@ -3,7 +3,6 @@
 ```bash
 git clone https://github.com/imNotValid/Simple-WebSocket
 cd Simple-WebSocket
-do ...
 ```
 # Create Object
 ```python
