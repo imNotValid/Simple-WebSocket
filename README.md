@@ -1,5 +1,5 @@
 # Simple WebSocket
-![image](https://github.com/imNotValid/Simple-WebSocket/blob/main/Screenshot%20from%202022-08-30%2018-11-17.png)
+![image](https://github.com/imNotValid/Simple-WebSocket/blob/f48ea8e78a3dad8075be880afb198eee171d6077/ex_image/Screenshot%20from%202022-09-04%2001-01-32.png)
  # Example
  
  ```python
