@@ -4,7 +4,7 @@
 git clone https://github.com/imNotValid/Simple-WebSocket
 cd Simple-WebSocket
 ```
-# Create Object
+# Create an object
 ```python
 from WebSocket import WebSocket
 from util.types import Connection
