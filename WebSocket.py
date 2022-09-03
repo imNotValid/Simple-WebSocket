@@ -29,14 +29,14 @@ class WebSocket:
             data = Connection(*args, **kwargs)
             for event in list_of_listeners:
                 try:
-                    funct, filterss = event
+                    func, filters = event
                     if filterss:
-                        fr = data.filter_result = filterss(data)
+                        fr = data.filter_result = filters(data)
                         if fr:
-                            funct(data)
+                            func(data)
                             break
                     else:
-                        funct(data)
+                        func(data)
                 except Exception as e:
                     print(f"{e} - on handler -> {funct.__name__}")
 
