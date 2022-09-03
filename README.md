@@ -1,5 +1,4 @@
 # Simple WebSocket
-![image](https://github.com/imNotValid/Simple-WebSocket/blob/f48ea8e78a3dad8075be880afb198eee171d6077/ex_image/Screenshot%20from%202022-09-04%2001-01-32.png)
  # Project Setup
 ```bash
 git clone https://github.com/imNotValid/Simple-WebSocket
@@ -34,7 +33,7 @@ def disconnect(message: Connection):
     print(message.addr)
 ```
 
-# list of filter
+# list of filters
 ```python
 from util.filters import event, regex, filter_ips
 
@@ -42,9 +41,10 @@ from util.filters import event, regex, filter_ips
 # regex(pattern, flags=0)
 # filter_ips(list_of_ip: list or str)
 ```
+
 # how to use filters
 ```python
-@app.on_message(your filters)
+@app.on_message(your filters) # [event, regex, filter_ips] or you can create new filters
 def message_hello(message: Connection):
     message.send("Hello! - from filter_hello")
 ```
