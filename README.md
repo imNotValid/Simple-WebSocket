@@ -13,25 +13,42 @@ from util.types import Connection
 
 app = WebSocket()
 ```
-# filter ips - on new connection
+# on new connection
 ```python
-@app.on_new_connection(filter_ips(["1.1.1.1", "1.1.1.2"]))  # Example
+@app.on_new_connection()  # Example
 def on_connection(m: Connection):
     m.send("hello welcome to our server")
 ```
 
 # on message handler
 ```python
-@app.on_message(event("bing"))
+@app.on_message()
 def event_message(message: Connection):
-    message.send("bong! - from event filter")
+    message.send("Recieved!")
 ```
-# regex filter
+
+# On disconnect
 ```python
-@app.on_message(regex("ding"))
-def regex_message(message: Connection):
-    message.send("dong! - from regex filter")
+@app.on_disconnect()
+def disconnect(message: Connection):
+    print(message.addr)
 ```
+
+# list of filter
+```python
+from util.filters import event, regex, filter_ips
+
+# event("bing") -> {"event": "bing"}
+# regex(pattern, flags=0)
+# filter_ips(list_of_ip: list or str)
+```
+# how to use filters
+```python
+@app.on_message(your filters)
+def message_hello(message: Connection):
+    message.send("Hello! - from filter_hello")
+```
+
 # Create filter
 ```python
 def filter_hello(message: Connection):
@@ -40,17 +57,6 @@ def filter_hello(message: Connection):
     return False
 
 filter_hello = create(filter_hello)
-
-@app.on_message(filter_hello)
-def message_hello(message: Connection):
-    message.send("Hello! - from filter_hello")
-```
-
-# On disconnect
-```python
-@app.on_disconnect()
-def disconnect(message: Connection):
-    print(message.addr)
 ```
 
 # run server
