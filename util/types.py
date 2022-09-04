@@ -31,8 +31,8 @@ class Connection:
             message = message.encode()
         self.conn.send(message)
 
-    def recieve(self, BufferSize: int = 4096) -> bytes:
-        return _decode_message(self.conn.recv(BufferSize))
+    def recieve(self, buffer_size: int = 4096) -> bytes:
+        return _decode_message(self.conn.recv(buffer_size))
 
     def close(self):
         self.conn.close()
